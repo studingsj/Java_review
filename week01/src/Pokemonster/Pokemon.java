@@ -34,4 +34,22 @@ public abstract class Pokemon {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
+    public void evolve() {
+        if (this instanceof Pickashu) {
+            System.out.println("삐까~");
+        } else if ( this instanceof Squirtle) {
+            System.out.println("꼬북~");
+        } else if ( this instanceof Charizard) {
+            System.out.println("자몽~");
+        }
+        this.level = this.level + 1;
+        this.hp = this.hp + 100;
+        String texts = """
+                name의 레벨이 
+                level으로 증가
+                """ .replace("name", this.name)
+                    .replace("level", this.level + "");
+        System.out.println(texts);
+    }
 }
